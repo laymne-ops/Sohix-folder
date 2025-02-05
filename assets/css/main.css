@@ -45,6 +45,29 @@ button {
   border-radius: 5px;
 }
 
+/* Default light mode styles */
+body {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  --background-color: #121212;
+  --default-color: #ffffff;
+  --heading-color: #836FFF;
+  --surface-color: #1f1f1f;
+  
+  color: #ffffff;
+}
+
+/* NAHIII HADI BAH YROH NAS AL SCREENN KHAL */
+
+body.dark-mode .navmenu a {
+  color: #ffffff;
+}
+
+/* Add more dark mode styles as needed */
 /* Dark Mode */
 body.dark-mode {
   background-color: #121212;
@@ -70,7 +93,6 @@ body.dark-mode {
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
-
 .light-background {
   --background-color: #f9f9f9;
   --surface-color: #ffffff;
@@ -569,7 +591,7 @@ section,
 
 .hero:before {
   content: "";
-  background: color-mix(in srgb, var(--background-color), transparent 30%);
+  background: color-mix(in srgb, black, transparent 65%);
   position: absolute;
   inset: 0;
   z-index: 2;

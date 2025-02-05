@@ -8,7 +8,38 @@
 
 (function() {
   "use strict";
+
+  // Dark Mode Toggle
+  const darkModeToggle = document.getElementById('dark-mode-toggle');
+  const body = document.body;
   
+  // Check if elements exist
+  if (!darkModeToggle || !body) {
+    console.error('Dark mode toggle or body element not found!');
+    return;
+  }
+
+  // Check user's preference from localStorage
+  if (localStorage.getItem('dark-mode') === 'enabled') {
+    body.classList.add('dark-mode');
+    darkModeToggle.innerHTML = '<i class="bi bi-sun"></i>'; // Sun icon for light mode
+  }
+
+  // Toggle dark mode
+  darkModeToggle.addEventListener('click', () => {
+    console.log('Dark mode toggle clicked'); // Debugging
+    body.classList.toggle('dark-mode');
+    const isDarkMode = body.classList.contains('dark-mode');
+
+    // Save user's preference in localStorage
+    if (isDarkMode) {
+      localStorage.setItem('dark-mode', 'enabled');
+      darkModeToggle.innerHTML = '<i class="bi bi-sun"></i>'; // Sun icon for light mode
+    } else {
+      localStorage.setItem('dark-mode', 'disabled');
+      darkModeToggle.innerHTML = '<i class="bi bi-moon"></i>'; // Moon icon for dark mode
+    }
+  });
   /**
    * Header toggle
    */
