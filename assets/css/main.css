@@ -49,6 +49,7 @@ button {
 body {
   background-color: #ffffff;
   color: #000000;
+  overflow-x: hidden;
 }
 
 /* Dark mode styles */
@@ -105,12 +106,22 @@ body.dark-mode {
   --surface-color: #252525;
   --contrast-color: #ffffff;
 }
-
+.background-clip{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
 /* Smooth scroll */
 :root {
   scroll-behavior: smooth;
 }
-
+#hero{
+  background-color: rgba(0, 0, 0, 0);
+}
 /*--------------------------------------------------------------
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
