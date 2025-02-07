@@ -258,3 +258,40 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
+
+
+
+function sendMail(event) {
+  event.preventDefault(); // Prevent page reload
+
+  const form = document.getElementById("contact-form");
+
+  // Validate form
+  if (!form.checkValidity()) {
+      alert("Veuillez remplir tous les champs requis correctement.");
+      return;
+  }
+
+  let parms = {
+      from_name: document.querySelector("[name='name']").value,
+      email_id: document.querySelector("[name='email']").value,
+      subject: document.querySelector("[name='subject']").value,
+      message: document.querySelector("[name='message']").value
+  };
+
+  emailjs.send("service_vjnrkmh", "template_klvkldf", parms)
+      .then(function (res) {
+          alert("Success! Your message has been sent. Status: " + res.status);
+          form.reset();
+      })
+      .catch(function (err) {
+          alert("Failed to send email. Please try again later. Error: " + err);
+      });
+}
+
+// Ensure EmailJS is initialized
+emailjs.init("0iEW28aJ3HIQOrBuY");
+
+// Attach event listener
+document.getElementById("contact-form").addEventListener("submit", sendMail);
+
