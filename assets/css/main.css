@@ -69,6 +69,9 @@ body.dark-mode .navmenu a {
   color: #ffffff;
 }
 
+body.dark-mode .footer {
+  background-color: #1f1f1f;
+}
 /* Add more dark mode styles as needed */
 /* Dark Mode */
 body.dark-mode {

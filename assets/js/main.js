@@ -7,6 +7,7 @@
 */
 
 (function() {
+
   "use strict";
 
   // Dark Mode Toggle
@@ -34,10 +35,10 @@
     // Save user's preference in localStorage
     if (isDarkMode) {
       localStorage.setItem('dark-mode', 'enabled');
-      darkModeToggle.innerHTML = '<i class="bi bi-sun"></i>'; // Sun icon for light mode
+      darkModeToggle.innerHTML = '<i class="bi bi-moon"></i><span>Mode</span></a></li>'; // Sun icon for light mode
     } else {
       localStorage.setItem('dark-mode', 'disabled');
-      darkModeToggle.innerHTML = '<i class="bi bi-moon"></i>'; // Moon icon for dark mode
+      darkModeToggle.innerHTML = '<i class="bi bi-moon"></i><span>Mode</span></a></li>'; // Moon icon for dark mode
     }
   });
   /**
