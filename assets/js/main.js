@@ -8,6 +8,8 @@
 
 (function() {
 
+  
+
   "use strict";
 
   // Dark Mode Toggle
@@ -23,7 +25,7 @@
   // Check user's preference from localStorage
   if (localStorage.getItem('dark-mode') === 'enabled') {
     body.classList.add('dark-mode');
-    darkModeToggle.innerHTML = '<i class="bi bi-sun"></i>'; // Sun icon for light mode
+    darkModeToggle.innerHTML = '<i class="bi bi-sun"></i><span>Mode</span></a></li>'; // Sun icon for light mode
   }
 
   // Toggle dark mode
@@ -35,7 +37,7 @@
     // Save user's preference in localStorage
     if (isDarkMode) {
       localStorage.setItem('dark-mode', 'enabled');
-      darkModeToggle.innerHTML = '<i class="bi bi-moon"></i><span>Mode</span></a></li>'; // Sun icon for light mode
+      darkModeToggle.innerHTML = '<i class="bi bi-sun"></i><span>Mode</span></a></li>'; // Sun icon for light mode
     } else {
       localStorage.setItem('dark-mode', 'disabled');
       darkModeToggle.innerHTML = '<i class="bi bi-moon"></i><span>Mode</span></a></li>'; // Moon icon for dark mode
